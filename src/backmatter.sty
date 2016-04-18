@@ -2,37 +2,37 @@
 \RequirePackage{environ}
 
 \NewEnviron{backmatter}{
-    \newpage
-    \glsaddall
-    \printglossaries
-    \addcontentsline{toc}{section}{Glossary}
-    \clearpage
+	\newpage
+	\glsaddall
+	\printglossaries
+	\addcontentsline{toc}{section}{Glossary}
+	\clearpage
 
-    \newpage
-    \printreferences
-    \clearpage
+	\newpage
+	\printreferences
+	\clearpage
 
-    \newcounter{appendixsection}
-    \newcounter{appendixfigurenumber}[appendixsection]
-    \newcounter{appendixtablenumber}[appendixsection]
+	\newcounter{appendixsection}
+	\newcounter{appendixfigurenumber}[appendixsection]
+	\newcounter{appendixtablenumber}[appendixsection]
 
-    \renewcommand{\thefigure}{\Alph{appendixsection}.\arabic{appendixfigurenumber}}
-    \renewcommand{\thetable}{\Alph{appendixsection}.\arabic{appendixtablenumber}}
+	\renewcommand{\thefigure}{\Alph{appendixsection}.\arabic{appendixfigurenumber}}
+	\renewcommand{\thetable}{\Alph{appendixsection}.\arabic{appendixtablenumber}}
 
-    \renewenvironment{appendix}[1]{
-        \newpage
+	\renewenvironment{appendix}[1]{
+		\newpage
 
-        \stepcounter{appendixsection}
-        \stepcounter{appendixfigurenumber}
-        \stepcounter{appendixtablenumber}
+		\stepcounter{appendixsection}
+		\stepcounter{appendixfigurenumber}
+		\stepcounter{appendixtablenumber}
 
 
-        \addcontentsline{toc}{section}{Appendix \Alph{appendixsection}: ##1}
-        \section*{Appendix \Alph{appendixsection}: ##1}
-    }
-    {
-        \clearpage
-    }
+		\addcontentsline{toc}{section}{Appendix \Alph{appendixsection}: ##1}
+		\section*{Appendix \Alph{appendixsection}: ##1}
+	}
+	{
+		\clearpage
+	}
 
-    \BODY
+	\BODY
 }

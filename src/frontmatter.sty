@@ -1,4 +1,4 @@
-% This file contains the implementation of the rules for formatting the front of a 
+% This file contains the implementation of the rules for formatting the front of a
 % nanotechnology engineering workterm report.
 
 \NeedsTeXFormat{LaTeX2e}
@@ -10,20 +10,20 @@
 \renewcommand{\contentsname}{Table of Contents}
 
 \newenvironment{frontmatter}{
-		
+
 	\maketitlepage
-	
+
 	% Environment for the letter of submittal
 	\NewEnviron{letter_of_submittal}[2]{
-        
+
 		\newgeometry{letterpage}
 		\pagenumbering{gobble}
-		
+
 		\setlength{\parindent}{0cm}
 		\setlength{\parskip}{1\baselineskip}
 
 		\newpage
-       
+
 		\@employeraddress
 
 		\vspace*{0pt}
@@ -38,13 +38,13 @@
 		\@universityaddress
 
 		\vspace*{0pt}
-		
+
 		##1
-		
+
 		\vspace*{0pt}
 
 		\BODY
-		
+
 		\vspace*{0pt}
 
 		##2
@@ -55,34 +55,34 @@
 		\@studentnumber
 
 		\clearpage
-		
+
 		\restoregeometry
-	
+
 	}
 
 	\NewEnviron{contributions}{
-		
+
 		\newpage
 		\pagenumbering{roman}
 		\setcounter{page}{3}
-	
+
 		\setstretch{1.5}
-        		\setlength{\parindent}{0cm}
-        		\setlength{\parskip}{1\baselineskip}
+				\setlength{\parindent}{0cm}
+				\setlength{\parskip}{1\baselineskip}
 
-    		\addcontentsline{toc}{section}{Contributions}
+			\addcontentsline{toc}{section}{Contributions}
 
-    		\begin{section}*{Contributions}
+			\begin{section}*{Contributions}
 
-    		\BODY
+			\BODY
 
-    		\end{section}
-        		\clearpage
-		
+			\end{section}
+				\clearpage
+
 	}
 
 	\NewEnviron{summary}{
-	
+
 		\newpage
 
 		\setstretch{1.5}
@@ -90,7 +90,7 @@
 		\setlength{\parskip}{0.5\baselineskip}
 
 		\addcontentsline{toc}{section}{Summary}
-		
+
 		\begin{section}*{Summary}
 
 		\BODY
@@ -99,11 +99,11 @@
 		\clearpage
 
 	}
-	
+
 	\NewEnviron{conclusions}{
-		
+
 		\newpage
-		
+
 		\setstretch{1.5}
 		\setlength{\parindent}{0cm}
 		\setlength{\parskip}{0.5\baselineskip}
@@ -120,7 +120,7 @@
 	}
 
 	\NewEnviron{recommendations}{
-		
+
 		\newpage
 
 		\setstretch{1.5}
@@ -136,7 +136,7 @@
 		\end{section}
 		\clearpage
 		\setcounter{pagenumber}{\arabic{page}}
-		
+
 	}
 
 }
@@ -149,7 +149,7 @@
 \begin{titlepage}
 
 	\newgeometry{letterpage}
-	
+
 	\centering
 
 	{\LARGE  \@university \par}
@@ -173,7 +173,7 @@
 	User ID \@studentid \par
 	\@previousterm \hspace{1pt} \@program \par
 	\today \par
-	
+
 	\restoregeometry
 
 	\end{titlepage}
@@ -184,27 +184,27 @@
 \newcommand{\toctree}{
 
 	\newpage
-	
+
 	\tableofcontents
-	
+
 	\clearpage
-	
+
 }
 
 \newcommand{\listoffiguresandtables}{
 
 	\newpage
-	
+
 	\addcontentsline{toc}{section}{List of Figures}
 	\listoffigures
-	
+
 	\clearpage
 
 	\newpage
-	
+
 	\addcontentsline{toc}{section}{List of Tables}
 	\listoftables
-	
+
 	\clearpage
 
 }

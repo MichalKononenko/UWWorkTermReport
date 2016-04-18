@@ -93,7 +93,7 @@
 % --- User Data
 
 \renewcommand{\title}[1]{
-    \def\@title{#1}
+	\def\@title{#1}
 }
 
 \renewcommand{\author}[1]{
@@ -101,43 +101,43 @@
 }
 
 \newcommand{\university}[1]{
-    \def\@university{#1}
+	\def\@university{#1}
 }
 
 \newcommand{\universityaddress}[1]{
-    \def\@universityaddress{#1}
+	\def\@universityaddress{#1}
 }
 
 \newcommand{\faculty}[1]{
-    \def\@faculty{#1}
+	\def\@faculty{#1}
 }
 
 \newcommand{\program}[1]{
-    \def\@program{#1}
+	\def\@program{#1}
 }
 
 \newcommand{\employername}[1]{
-    \def\@employername{#1}
+	\def\@employername{#1}
 }
 
 \newcommand{\employeraddress}[1]{
-    \def\@employeraddress{#1}
+	\def\@employeraddress{#1}
 }
 
 \newcommand{\studentnumber}[1]{
-    \def\@studentnumber{#1}
+	\def\@studentnumber{#1}
 }
 
 \newcommand{\studentid}[1]{
-    \def\@studentid{#1}
+	\def\@studentid{#1}
 }
 
 \newcommand{\previousterm}[1]{
-    \def\@previousterm{#1}
+	\def\@previousterm{#1}
 }
 
 \newcommand{\programdirector}[1]{
-    \def\@programdirector{#1}
+	\def\@programdirector{#1}
 }
 
 \newcommand{\printreferences}{
@@ -153,7 +153,7 @@
 [0pt] % left margin
 {\vspace{2pt}} % above code
 {
-    \thecontentslabel\enspace
+	\thecontentslabel\enspace
 } % numbered entry format
 {\hspace{4pt}\contentsmargin{0pt}} % un-numbered entry format
 {\titlerule*[.5pc]{.}\contentspage} % separator
@@ -163,8 +163,8 @@
 [10pt]
 {}
 {
-    \contentsmargin{10pt}
-    \thecontentslabel\enspace
+	\contentsmargin{10pt}
+	\thecontentslabel\enspace
 } % numbered entry format
 {\contentsmargin{0pt}} % un-numbered entry format
 {\titlerule*[.5pc]{.}\contentspage} % separator
@@ -174,8 +174,8 @@
 [20pt]
 {}
 {
-    \contentsmargin{10pt}
-    \thecontentslabel\enspace
+	\contentsmargin{10pt}
+	\thecontentslabel\enspace
 }
 {\contentsmargin{10pt}}
 {\titlerule*[.5pc]{.}\contentspage} % separator

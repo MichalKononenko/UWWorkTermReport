@@ -170,27 +170,47 @@
 
 	\lipsum[1-2]
 	
-% This is where I stopped commenting (2016-04-13)
+% The \ref{reference} command will create a reference to any \label command.
 Here's a reference to table \ref{tbl:exampletable}
 
+% The table environment is used to create a table. Note that by calling this environment, 
+% this table will automatically be added to the list of tables.
 \begin{table}
+	
+	% The \centering command centres the table.
 	\centering
+	
+	% The tabular environment creates the table itself. For more information
+	% and options when using this environment, refer to the link under Tables provided
+	% in README.md.
 	\begin{tabular}{|c|c|c|} \hline
 		title & number & decimal \\ \hline
 		heading & 1 & 1.7 \\ \hline
 		another heading & 2 & 3.4 \\ \hline
 	\end{tabular}
+	% The \caption{title} command adds a caption to your table. This caption will then 
+	% be used in the list of tables.
 	\caption{A table demonstrating \LaTeX \, formatting}
+	
+	% The \label{title} command creates a reference that can be used to refer to this
+	% table in the document. An example of this can be found on line 174.
 	\label{tbl:exampletable}
+	
 \end{table}
 
 \section{Math}
 
-\lipsum[1]
+	\lipsum[1]
 
 \subsection{The Bloch Equations}
 
+	% The align environment is an important environment when writing out multiple 
+	% mathematical equations. It is used when vertical alignment is desired. Usually 
+	% binary relations, such as equal signs, are aligned.
 	\begin{align}
+		% The following are mathematical equations written using the amsmath 
+		% package. For more information on writing mathematical equations in 
+		% LaTeX, refer to the link under AMSMath in README.md.
 		\frac{d\, M_x(t)}{dt} &= \gamma(\mathbf{M}(t) \times \mathbf{B}(t))_x - \frac{M_x(t)}{T_2} \\
 		\frac{d\, M_y(t)}{dt} &= \gamma(\mathbf{M}(t) \times \mathbf{B}(t))_y - \frac{M_y(t)}{T_2} \\
 		\frac{d\, M_z(t)}{dt} &= \gamma(\mathbf{M}(t) \times \mathbf{B}(t))_z - \frac{M_z(t) - M_0}{T_1}
@@ -198,85 +218,119 @@ Here's a reference to table \ref{tbl:exampletable}
 
 \subsection{The Schrodinger Equation}
 
+	% The equation environment is used when only one equation needs to be written.
 	\begin{equation}
 		i\hbar \frac{\partial \, \Psi}{\partial t} = \hat{H}\Psi
 	\end{equation}
 
 \section{Graphics}
-    Here's a stock image of a computer. It comes with a CC0 license, enabling
-    free distribution for commercial and personal use. It's a JPEG
 
-    \begin{figure}[!ht]
-    	\centering
-        \label{fig:stock_computer}
-        \includegraphics[width=5cm]{./stock-image.jpg}
-        \caption{A stock computer, I just wanted a picture here}
-    \end{figure}
+	Here's a stock image of a computer. It comes with a CC0 license, enabling
+	free distribution for commercial and personal use. It's a JPEG.
+	
+	% The figure environment allows for the insertion of a figure into a LaTeX 
+	% document. By creating this environment, the figure will be automatically be added
+	% to the list of figures. For more information on inserting figures, refer to the link 
+	% under Figures in README.md.
+	\begin{figure}[!ht]
+		\centering
+		\label{fig:stock_computer}
+		\includegraphics[width=5cm]{./stock-image.jpg}
+		\caption{A stock computer, I just wanted a picture here}
+	\end{figure}
 
 \section{Conclusions}
+	
+	% The \gls{title} command allows the LaTeX document to keep track of where words
+	% in the glossary are used. For more information on the glossary and acronyms, 
+	% refer to the link under Glossary and Acronyms in README.md.
 	\gls{LaTeX} is awesome.
 
 \section{Recommendations}
 
 	Use more \LaTeX. Also, use more \gls{Unix}. Also, citations like
-    \cite{schweiger_principles_2001} will lead to a better quality of work.
+    	\cite{schweiger_principles_2001} will lead to a better quality of work.
 
 \end{body}
 
+% The \newglossaryentry{title} command creates an entry for the glossary. It requires a 
+% name and description. The title is used for making references to the glossary entry 
+% throughout the document. For more information on the glossary and acronyms, refer 
+% to the link under Glossary and Acronyms in README.md.
 \newglossaryentry{LaTeX}{
-    name={\LaTeX},
-    description={A document preparation system used for
-        high-quality typesetting. It is most often used
-        for medium-to-large technical or scientific documents.
-        \LaTeX is not a word processor!
-    }
+	name={\LaTeX},
+	description={A document preparation system used for
+		high-quality typesetting. It is most often used
+		for medium-to-large technical or scientific documents.
+		\LaTeX is not a word processor!
+	}
 }
 
 \newglossaryentry{Unix}{
 	name={Unix},
 	description={A multi-user multi-tasking operating system
-	developed by Ken Thompson and Dennis Ritchie in the 1970s, which has inspired many features behind Mac OSX and Linux
+		developed by Ken Thompson and Dennis Ritchie in the 
+		1970s, which has inspired many features behind Mac OSX 
+		and Linux
 }
 }
 
 \addbibresource{./example.bib}
 
+%%%%%%%%%%%
+%  BACK MATTER  %
+%%%%%%%%%%%
 
+% The \begin{backmatter} command will create the backmatter environment. This 
+% environment includes the formatting required for the body, as well as the the 	
+% appendix environment.
 \begin{backmatter}
 
-	\begin{appendix}{Here's An Appendix}
-		\lipsum[1-2]
+% The appendix environment creates an appendix that will be properly added to 
+% table of contents. All figures and tables will be properly formatted to include the 
+% appendix letter.
+\begin{appendix}{Here's An Appendix}
+		
+	\lipsum[1-2]
+	
+\end{appendix}
 
-    \end{appendix}
+\begin{appendix}{Here's Another Appendix}
+	
+	\lipsum[1-2]
+		
+\end{appendix}
 
-    \begin{appendix}{Here's Another Appendix}
-		\lipsum[1-2]
-    \end{appendix}
+\begin{appendix}{A Figure in An Appendix}
+	
+	\lipsum[1-2]
+	
+	% This figure shows proper appendix formatting.
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=5cm]{./stock-image.jpg}
+		\caption{It's back!}
+	\end{figure}
 
-    \begin{appendix}{A Figure in An Appendix}
+\end{appendix}
+
+\begin{appendix}{A Table in An Appendix}
+        
         \lipsum[1-2]
 
-        \begin{figure}[!ht]
-            \centering
-            \includegraphics[width=5cm]{./stock-image.jpg}
-            \caption{It's back!}
-        \end{figure}
-
-    \end{appendix}
-
-    \begin{appendix}{A Table in An Appendix}
-        \lipsum[1-2]
-
+	% This table shows proper appendix formatting.
         \begin{table}
-            \centering
-            \begin{tabular}{|c|c|c|} \hline
-                \textbf{Data} & \textbf{Integer} & \textbf{Float} \\ \hline
-                Foo & 1 & 1.1 \\ \hline
-            \end{tabular}
-            \caption{A Table in an Appendix, displaying the correct numbering}
+		\centering
+		
+		\begin{tabular}{|c|c|c|} \hline
+			\textbf{Data} & \textbf{Integer} & \textbf{Float} \\ \hline
+			Foo & 1 & 1.1 \\ \hline
+		\end{tabular}
+		
+		\caption{A Table in an Appendix, displaying the correct numbering}
         \end{table}
 
-    \end{appendix}
+\end{appendix}
 
 \end{backmatter}
 
