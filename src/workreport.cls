@@ -35,7 +35,6 @@
 % work term report
 \RequirePackage{setspace}
 
-
 % Creates and manages the glossary section of the work term report.
 \RequirePackage[toc, xindy, nonumberlist, nopostdot]{glossaries}
 
@@ -65,6 +64,29 @@
 % Allows user to put in graphics into their work term report
 \RequirePackage{graphicx}
 
+% Format titles to have the requisite spacing between them (2 lines is interpreted to be 24 pt)
+\RequirePackage{titlesec}
+\titleformat{\section}[block]
+  {\vspace{24pt}\fontsize{14}{15}\large\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}[block]
+  {\vspace{24pt}\fontsize{12}{15}\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titleformat{\subsubsection}[block]
+  {\vspace{24pt}\fontsize{12}{15}\bfseries}
+  {\thesubsubsection}
+  {1em}
+  {}
+
+% Place captions above the table
+\RequirePackage{floatrow}
+\floatsetup[table]{capposition=top}
 
 % --- Dependencies on Packages Provided in this Repo
 % This section imports the frontmatter, body, and backmatter packages, which

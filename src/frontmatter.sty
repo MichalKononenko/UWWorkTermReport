@@ -6,6 +6,7 @@
 \RequirePackage{environ}
 \RequirePackage{titletoc}
 \RequirePackage{setspace}
+\RequirePackage{tocloft}
 
 \renewcommand{\contentsname}{Table of Contents}
 
@@ -189,13 +190,23 @@
 	\newpage
 
 	\addcontentsline{toc}{section}{List of Figures}
+	{
+	\let\oldnumberline\numberline
+	\renewcommand{\numberline}{\figurename~\oldnumberline}
 	\listoffigures
+	}
 
 	\clearpage
 
 	\newpage
 
 	\addcontentsline{toc}{section}{List of Tables}
+
+	\newlength\tablelen
+	\settowidth\tablelen{Table}
+	\addtolength\cfttabnumwidth{\tablelen}
+	\renewcommand\cfttabpresnum{Table }
+
 	\listoftables
 
 	\clearpage
